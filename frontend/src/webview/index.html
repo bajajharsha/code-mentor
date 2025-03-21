@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Mentor</title>
+</head>
+
+<body>
+    <!-- Auth Container -->
+    <div id="authContainer" class="container">
+        <div class="logo">CM</div>
+        <h2 id="authTitle">Sign in to Code Mentor</h2>
+        <div class="auth-form">
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="your@email.com" required />
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Your password" required />
+            </div>
+            <button id="authButton" onclick="window.authenticate('login')">Sign in</button>
+            <p class="switch" onclick="window.toggleAuth()">Don't have an account? Sign up</p>
+            <p class="brand">Code Mentor v1.0</p>
+        </div>
+    </div>
+
+    <!-- Chat Container -->
+    <div id="chatContainer" class="container hidden">
+        <div class="chat-container">
+            <h3>Code Mentor</h3>
+            <div id="messages"></div>
+            <div class="input-area">
+                <input type="text" id="userInput" placeholder="Ask a question..." />
+                <button class="send-button" onclick="window.sendMessage()">Send</button>
+            </div>
+            <button class="logout-button" onclick="window.logout()">Sign out</button>
+        </div>
+    </div>
+</body>
+
+</html>

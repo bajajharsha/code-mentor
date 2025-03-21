@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+motor
+passlib
+python-jose
+python-multipart
+pydantic
+email-validator
+python-dotenv
+pydantic-settings
+bcrypt
+httpx
+pinecone-text
+pinecone
+aiofiles

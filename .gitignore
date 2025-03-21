@@ -1,0 +1,11 @@
+.env
+venv/
+make_dirs.py
+make_inits.py
+test.py
+uploads/
+logs/
+app.zip
+test2.py
+test3.py
+folder_structure.txt
