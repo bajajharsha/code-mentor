@@ -57,7 +57,7 @@ class QueryAnalysisPipeline:
     
     async def reformulate_query(self, query: str, intent_analysis: Dict[str, Any]) -> str:
         
-        prompt = INTENT_USER_PROMPT_TEMPLATE.format(
+        prompt = REFORMULATE_USER_PROMPT_TEMPLATE.format(
             query = query,
             intent_analysis = intent_analysis
         )
