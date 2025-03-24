@@ -4,7 +4,9 @@ import * as path from "path";
 import * as vscode from "vscode";
 
 export async function generateCodeChunks(email: string, firstFlag: boolean) {
+    console.log("Inside bacekend.ts");
     console.log("Generating code chunks...");
+
     const workspaceFolders = vscode.workspace.workspaceFolders;
     if (!workspaceFolders) {
         vscode.window.showErrorMessage("No workspace is open!");
@@ -13,7 +15,8 @@ export async function generateCodeChunks(email: string, firstFlag: boolean) {
 
     const workspacePath = workspaceFolders[0].uri.fsPath;
     const workspaceName = workspaceFolders[0].name;
-    const projectRoot = "/Users/harshabajaj/Desktop/HACKATHON1/testing/code-mentor-team-1/frontend";
+    // const projectRoot = "/Users/harshabajaj/Desktop/HACKATHON1/testing/code-mentor-team-1/frontend";
+    const projectRoot = path.dirname(__dirname);
     const pythonScript = path.join(projectRoot, "src", "code_chunker.py");
     
     // Define output path in your local folder
