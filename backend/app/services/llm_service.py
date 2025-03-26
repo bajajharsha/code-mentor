@@ -41,7 +41,7 @@ class LLMService():
             **params
         }
         try:
-            async with httpx.AsyncClient(timeout=self.timeout) as client:
+            async with httpx.AsyncClient(timeout=self.timeout, verify=False) as client:
                 s = time.perf_counter()
                 response = await client.post(self.openai_chat_url, headers=headers, json=payload)
                 e = time.perf_counter()
@@ -102,7 +102,7 @@ class LLMService():
         }
 
         try:
-            async with httpx.AsyncClient(timeout=self.timeout) as client:
+            async with httpx.AsyncClient(timeout=self.timeout, verify=False) as client:
                 response = await client.post(self.anthropic_chat_url, headers=headers, json=payload)
                 response.raise_for_status()
                 response_data = response.json()
@@ -154,7 +154,7 @@ class LLMService():
         }
 
         try:
-            async with httpx.AsyncClient() as client:
+            async with httpx.AsyncClient(verify=False) as client:
                 response = await client.post(self.groq_chat_url, headers=headers, json=payload)
                 response.raise_for_status()
                 response_data = response.json()
@@ -208,7 +208,7 @@ class LLMService():
             "stream": True
         }
 
-        async with httpx.AsyncClient(timeout=self.timeout) as client:
+        async with httpx.AsyncClient(timeout=self.timeout, verify=False) as client:
             try:
                 async with client.stream("POST", self.anthropic_chat_url, headers=headers, json=payload) as response:
                     if response.status_code != 200:
